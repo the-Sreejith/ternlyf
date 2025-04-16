@@ -14,6 +14,10 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_riverpod: ^2.6.1
   supabase_flutter: ^2.8.4
+  go_router: ^14.8.1
+  flutter_svg: ^2.0.17
+  zoom_tap_animation: ^1.1.0
+  pinput: ^5.0.1
 
 dev_dependencies:
   flutter_test:
@@ -23,3 +27,15 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/
+    - assets/svg/
+
+  fonts:
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope.ttf
+    - family: RadioCanadaBig
+      fonts:
+        - asset: assets/fonts/RadioCanadaBig.ttf
