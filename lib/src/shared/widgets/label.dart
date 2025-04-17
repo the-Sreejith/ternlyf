@@ -35,7 +35,7 @@ class Label extends StatelessWidget {
           subTitle,
           style: TextStyle(
             fontSize: 16,
-            color: AppColors.black.withOpacity(0.7),
+            color: AppColors.black..withAlpha((0.7 * 255).round()),
             fontWeight: FontWeight.w400,
             fontFamily: AppFonts.radioCanadaBig,
           ),

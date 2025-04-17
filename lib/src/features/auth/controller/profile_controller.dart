@@ -3,9 +3,9 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../data/superbase_sign_in_repo.dart';
 
-class ProfileController extends StateNotifier<User?> {
+class SessionController extends StateNotifier<User?> {
   final Ref ref;
-  ProfileController(this.ref) : super(null);
+  SessionController(this.ref) : super(null);
 
   bool get isLoggedIn => state != null;
 
@@ -28,8 +28,8 @@ class ProfileController extends StateNotifier<User?> {
 
 }
 
-/// Riverpod Provider for ProfileController
-final profileController =
-    StateNotifierProvider<ProfileController, User?>(
-      (ref) => ProfileController(ref),
+/// Riverpod Provider for SessionController
+final sessionController =
+    StateNotifierProvider<SessionController, User?>(
+      (ref) => SessionController(ref),
     );

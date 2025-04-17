@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../constants/app_sizes.dart';
-import '../../auth/presentation/profile_controller.dart';
+import '../../auth/controller/profile_controller.dart';
 
 import '../../../shared/widgets/custom_button.dart';
 
@@ -15,7 +15,7 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final user = ref.watch(profileController);
+    final user = ref.watch(sessionController);
 
     return Scaffold(
       appBar: AppBar(
@@ -27,20 +27,20 @@ class HomeScreen extends ConsumerWidget {
           children: [
             Spacer(),
             Text(
-              'User Id: ${user!.id!}',
+              'User Id: ${user!.id}',
               style: TextStyle(
                 fontSize: 18,
-                color: AppColors.black.withOpacity(0.6),
+                color: AppColors.black..withAlpha((0.6 * 255).round()),
                 fontWeight: FontWeight.w400,
                 fontFamily: AppFonts.radioCanadaBig,
               ),
               textAlign: TextAlign.center,
             ),
             Text(
-              'Phone No: ${user!.phone!}',
+              'Phone No: ${user.phone!}',
               style: TextStyle(
                 fontSize: 18,
-                color: AppColors.black.withOpacity(0.6),
+                color: AppColors.black..withAlpha((0.6 * 255).round()),
                 fontWeight: FontWeight.w400,
                 fontFamily: AppFonts.radioCanadaBig,
               ),
@@ -49,7 +49,7 @@ class HomeScreen extends ConsumerWidget {
             Spacer(),
             CustomButton.danger(
               onPressed: () => showDeleteAccountDialog(context, () async {
-                await ref.read(profileController.notifier).deleteUser();
+                await ref.read(sessionController.notifier).deleteUser();
               }),
               child: Text(
                 'Delete My Account',
@@ -64,7 +64,7 @@ class HomeScreen extends ConsumerWidget {
             ),
             gapH16,
             CustomButton.secondary(
-              onPressed: () => ref.read(profileController.notifier).signOut(),
+              onPressed: () => ref.read(sessionController.notifier).signOut(),
               child: Text(
                 'Sign Out',
                 style: TextStyle(

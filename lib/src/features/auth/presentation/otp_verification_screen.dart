@@ -10,7 +10,7 @@ import '../../../shared/widgets/label.dart';
 import '../../../shared/widgets/custom_button.dart';
 import '../../../theme/app_fonts.dart';
 
-import 'login_controller.dart';
+import '../controller/login_controller.dart';
 
 class OtpVerificationScreen extends ConsumerWidget {
   const OtpVerificationScreen({super.key});

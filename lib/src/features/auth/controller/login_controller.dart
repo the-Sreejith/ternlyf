@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -16,7 +18,7 @@ class LoginController extends StateNotifier<AsyncValue<void>> {
   final Ref ref;
   LoginController(this.ref) : super(const AsyncData(null));
 
-  ProfileController get profile => ref.read(profileController.notifier);
+  SessionController get session => ref.read(sessionController.notifier);
 
   Future<void> requestPhoneOtp(String phone) async {
     state = const AsyncLoading();
@@ -29,7 +31,7 @@ class LoginController extends StateNotifier<AsyncValue<void>> {
       ref.read(phoneNumberProvider.notifier).state = phone;
       state = const AsyncData(null);
     } on AuthException catch (e, st) {
-      print('error ${e.message}');
+      log('error ${e.message}');
       state = AsyncError(e.message, st);
     }
   }
@@ -42,7 +44,7 @@ class LoginController extends StateNotifier<AsyncValue<void>> {
             phone: phone,
             otpCode: otpCode,
           );
-      await profile.init();
+      await session.init();
       state = const AsyncData(null);
     } on AuthException catch (e, st) {
       state = AsyncError(e.message, st);
@@ -53,10 +55,10 @@ class LoginController extends StateNotifier<AsyncValue<void>> {
     state = const AsyncLoading();
     try {
       await ref.read(superbaseSignInRepoProvider).googleSignIn();
-      await profile.init();
+      await session.init();
       state = const AsyncData(null);
     } on AuthException catch (e, st) {
-      print(e.message);
+      log(e.message);
       state = AsyncError(e.message, st);
     }
   }

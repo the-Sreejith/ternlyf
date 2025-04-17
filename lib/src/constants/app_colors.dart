@@ -7,7 +7,7 @@ class AppColors {
 
   static const Color black = Color(0xff0D0D0D);
   static const primaryColor = Color(0xFF89AC46);
-  static get hintColor => Color(0xff89AC46).withOpacity(0.15);
+  static get hintColor => Color(0xff89AC46)..withAlpha((0.15 * 255).round());
   static const Color pink = Color(0xFFFF8989);
   static const Color danger = Colors.red;
 

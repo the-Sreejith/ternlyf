@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../auth/presentation/profile_controller.dart';
+import '../auth/controller/profile_controller.dart';
 
 import '../home/presentation/home_screen.dart';
 import '../onboarding/onboarding_screen.dart';
@@ -18,7 +18,7 @@ class RootScreen extends ConsumerWidget {
 
     return initializationState.maybeWhen(
       data: (_) {
-        final user = ref.watch(profileController);
+        final user = ref.watch(sessionController);
         final isLoggedIn = user != null;
         return isLoggedIn ? const HomeScreen() : const OnboardingScreen();
       },

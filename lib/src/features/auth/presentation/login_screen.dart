@@ -14,8 +14,7 @@ import '../../../constants/app_colors.dart';
 
 import '../../../theme/app_fonts.dart';
 
-import 'login_controller.dart';
-import 'otp_verification_screen.dart';
+import '../controller/login_controller.dart';
 
 class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});

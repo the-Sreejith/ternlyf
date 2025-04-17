@@ -45,7 +45,7 @@ class OnboardingScreen extends ConsumerWidget {
               'Let\'s skip the talking stage and get right into exporing together',
               style: TextStyle(
                 fontSize: 18,
-                color: AppColors.black.withOpacity(0.6),
+                color: AppColors.black..withAlpha((0.6 * 255).round()),
                 fontWeight: FontWeight.w400,
                 fontFamily: AppFonts.radioCanadaBig,
               ), textAlign: TextAlign.center,
