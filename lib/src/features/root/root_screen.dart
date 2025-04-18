@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../auth/controller/profile_controller.dart';
+import '../auth/controller/session_controller.dart';
 
 import '../home/presentation/home_screen.dart';
 import '../onboarding/onboarding_screen.dart';

@@ -10,5 +10,6 @@ class Routes {
   static const String OnboardingScreenRoute = '/onboarding-screen';
   static const String LoginScreenRoute = '/login-screen';
   static const String OTPVerificationScreenRoute = '/otp-verification';
+  static const String ProfileSetUpScreenRoute = '/setup-profile';
   static const String HomeScreenRoute = '/Home-screen';
 }

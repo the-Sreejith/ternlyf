@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../auth/controller/profile_controller.dart';
+import '../../auth/controller/session_controller.dart';
 
 /// Ensures that [sessionController] has been initialized
 final rootProvider = FutureProvider<bool>((ref) async {

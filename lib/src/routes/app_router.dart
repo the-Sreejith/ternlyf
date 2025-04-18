@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../features/auth/presentation/otp_verification_screen.dart';
 import '../features/home/presentation/home_screen.dart';
+import '../features/profile_creation/presentation/user_profile_form_screen.dart';
 import '../features/root/root_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
 import '../features/auth/presentation/login_screen.dart';
@@ -47,6 +48,11 @@ final goRouteProvider = Provider<GoRouter>((ref) {
         path: Routes.HomeScreenRoute,
         name: Routes.HomeScreenRoute,
         builder: (context, state) => HomeScreen(),
+      ),
+      GoRoute(
+        path: Routes.ProfileSetUpScreenRoute,
+        name: Routes.ProfileSetUpScreenRoute,
+        builder: (context, state) => UserProfileFormScreen(),
       )
       // GoRoute(
       //   name: Routes.NotificationPermissionScreenRoute,

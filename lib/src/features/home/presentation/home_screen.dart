@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../constants/app_sizes.dart';
-import '../../auth/controller/profile_controller.dart';
+import '../../auth/controller/session_controller.dart';
 
 import '../../../shared/widgets/custom_button.dart';
 

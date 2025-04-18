@@ -18,6 +18,7 @@ dependencies:
   flutter_svg: ^2.0.17
   zoom_tap_animation: ^1.1.0
   pinput: ^5.0.1
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:

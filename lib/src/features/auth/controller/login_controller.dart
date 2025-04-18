@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../data/superbase_sign_in_repo.dart';
-import 'profile_controller.dart';
+import 'session_controller.dart';
 
 final loginController =
     StateNotifierProvider<LoginController, AsyncValue<void>>(
